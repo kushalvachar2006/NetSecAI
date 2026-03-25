@@ -12,11 +12,10 @@ A comprehensive cybersecurity analysis suite leveraging real-time backend intell
 [**Setup & Installation**](#setup--installation) •
 [**Environment Variables**](#environment-variables) •
 [**Security Notice**](#security-notice)
-
+### Project is Live:- [NetSecAI](https://netsecai-kva.netlify.app)
 </div>
 
 ---
-
 ## 🚀 What is NetSecAI?
 NetSecAI is a production-ready, full-stack cybersecurity analysis platform. It provides 5 specialized security tools that query live data (DNS, packets, VirusTotal, AbuseIPDB) and uses **Google's Gemini 2.5 Flash** to translate complex security findings into executive, non-technical summaries.
 
