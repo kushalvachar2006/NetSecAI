@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
 
-from routers import url_router, pcap_router, threat_router, content_router, sniffer_router, full_router
+from routers import url_router, pcap_router, threat_router, content_router, full_router
 
 logging.basicConfig(
     level=logging.INFO,
@@ -19,8 +19,7 @@ async def lifespan(app: FastAPI):
     logger.info("NetSecAI backend starting up...")
     yield
     logger.info("NetSecAI backend shutting down...")
-    from services.sniffer import sniffer_service
-    sniffer_service.stop()
+
 
 
 app = FastAPI(
@@ -52,7 +51,7 @@ app.include_router(url_router.router, prefix="/api/url", tags=["URL Analyzer"])
 app.include_router(pcap_router.router, prefix="/api/pcap", tags=["PCAP Analyzer"])
 app.include_router(threat_router.router, prefix="/api/threat", tags=["Threat Intelligence"])
 app.include_router(content_router.router, prefix="/api/content", tags=["Content Analyzer"])
-app.include_router(sniffer_router.router, prefix="/api/sniffer", tags=["Packet Sniffer"])
+
 app.include_router(full_router.router, prefix="/api/analyze", tags=["Full Analysis"])
 
 

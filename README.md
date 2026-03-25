@@ -17,7 +17,7 @@ A comprehensive cybersecurity analysis suite leveraging real-time backend intell
 ---
 
 ## 🚀 What is NetSecAI?
-NetSecAI is a production-ready, full-stack cybersecurity analysis platform. It provides 6 specialized security tools that query live data (DNS, packets, VirusTotal, AbuseIPDB) and uses **Google's Gemini 2.5 Flash** to translate complex security findings into executive, non-technical summaries.
+NetSecAI is a production-ready, full-stack cybersecurity analysis platform. It provides 5 specialized security tools that query live data (DNS, packets, VirusTotal, AbuseIPDB) and uses **Google's Gemini 2.5 Flash** to translate complex security findings into executive, non-technical summaries.
 
 ---
 
@@ -43,12 +43,7 @@ NetSecAI is a production-ready, full-stack cybersecurity analysis platform. It p
 - **XSS & Form Detection**: Detects potentially malicious cross-site scripting patterns and hidden credential harvesting forms.
 - **Suspicious Redirects**: Identifies hidden `iframes` and JavaScript-based obfuscation.
 
-### [5. Packet Sniffer](#)
-- **Live Capture**: Uses `scapy` to capture packets happening *right now* on your host interface.
-- **Wireshark-Style Filtering**: Filter live streams by Protocol (TCP, UDP, DNS, ICMP), Port, or IP Address.
-- **WHOIS Tool**: Click any source/destination IP address to trigger an automatic WHOIS lookup.
-
-### [6. Full Analysis Pipeline](#)
+### [5. Full Analysis Pipeline](#)
 - **Parallel Execution**: Runs URL Analysis, Threat Intelligence, and Content Analysis concurrently for maximum speed.
 - **Executive Board Report**: Synthesizes all findings into a structured Gemini AI markdown report with *Key Risks* and *Remediation Recommendations*.
 
@@ -80,7 +75,7 @@ _01.NetSecAI/
 │   ├── main.py                 # Application entrypoint & Middleware
 │   ├── config.py               # Centralized environment variable management
 │   ├── models.py               # Pydantic schema validation models
-│   ├── routers/                # API route controllers (URL, PCAP, Sniffer, etc)
+│   ├── routers/                # API route controllers (URL, PCAP, etc)
 │   └── services/               # Core business logic (Sniffer engines, AI prompts)
 │
 └── netsecai-frontend/          # React + Vite Frontend
@@ -91,7 +86,7 @@ _01.NetSecAI/
         ├── index.css           # Tailwind & Glassmorphism definitions
         ├── components/         # Reusable UI charts, cards, and Modals
         ├── contexts/           # NetSecContext.jsx (Central State Manager)
-        ├── pages/              # The 6 main dashboard views
+        ├── pages/              # The 5 main dashboard views
         └── services/           # api.js (Axios connection to FastAPI)
 ```
 
@@ -160,7 +155,7 @@ Visit **[http://localhost:5173](http://localhost:5173)** in your browser!
 
 NetSecAI is built for **educational purposes, forensic analysis, and authorized security auditing only**.
 - Do not use the URL Analyzer or Port Scanner against targets you do not have explicit permission to scan.
-- The Live Packet Sniffer uses **Scapy** to capture host traffic, ensure you only use it on trusted, private networks.
+
 
 ---
 

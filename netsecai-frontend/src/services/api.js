@@ -65,36 +65,7 @@ class NetSecAIService {
     return response.data
   }
 
-  async startSniffer(iface) {
-    const params = iface ? { interface: iface } : {}
-    const response = await api.get('/api/sniffer/start', { params })
-    return response.data
-  }
 
-  async stopSniffer() {
-    const response = await api.get('/api/sniffer/stop')
-    return response.data
-  }
-
-  async getSnifferPackets(limit = 100) {
-    const response = await api.get('/api/sniffer/packets', { params: { limit } })
-    return response.data
-  }
-
-  async getSnifferAlerts() {
-    const response = await api.get('/api/sniffer/alerts')
-    return response.data
-  }
-
-  async getSnifferStatus() {
-    const response = await api.get('/api/sniffer/status')
-    return response.data
-  }
-
-  async getSnifferError() {
-    const response = await api.get('/api/sniffer/error')
-    return response.data
-  }
 
   async healthCheck() {
     const response = await api.get('/health')

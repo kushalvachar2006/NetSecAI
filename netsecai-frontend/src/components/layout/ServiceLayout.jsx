@@ -8,7 +8,7 @@ const PATH_TITLES = {
   'pcap-analyzer':    'PCAP Analyzer',
   'threat-intel':     'Threat Intelligence',
   'content-analyzer': 'Content Analyzer',
-  'packet-sniffer':   'Packet Sniffer',
+
   'full-analysis':    'Full Analysis',
 }
 

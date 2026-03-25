@@ -7,14 +7,13 @@ const initialState = {
   threatIntel:  { loading: false, result: null, error: null },
   contentAnalysis: { loading: false, result: null, error: null },
   fullAnalysis: { loading: false, result: null, error: null },
-  sniffer: { running: false, packets: [], alerts: [], protocolStats: {}, totalCaptured: 0 },
+
 }
 
 const ACTIONS = {
   SET: 'SET',
   RESET: 'RESET',
-  SNIFFER_UPDATE: 'SNIFFER_UPDATE',
-  SNIFFER_STATUS: 'SNIFFER_STATUS',
+
 }
 
 function reducer(state, action) {
@@ -23,19 +22,7 @@ function reducer(state, action) {
       return { ...state, [action.key]: { ...state[action.key], ...action.payload } }
     case ACTIONS.RESET:
       return { ...state, [action.key]: initialState[action.key] }
-    case ACTIONS.SNIFFER_UPDATE:
-      return {
-        ...state,
-        sniffer: {
-          ...state.sniffer,
-          packets: action.payload.packets,
-          alerts: action.payload.alerts,
-          protocolStats: action.payload.protocolStats,
-          totalCaptured: action.payload.totalCaptured,
-        }
-      }
-    case ACTIONS.SNIFFER_STATUS:
-      return { ...state, sniffer: { ...state.sniffer, running: action.payload } }
+
     default:
       return state
   }
@@ -121,44 +108,7 @@ export function NetSecProvider({ children }) {
 
   const resetFullAnalysis = useCallback(() => reset('fullAnalysis'), [])
 
-  // Sniffer
-  const startSniffer = useCallback(async (iface) => {
-    try {
-      await netSecAIService.startSniffer(iface)
-      dispatch({ type: ACTIONS.SNIFFER_STATUS, payload: true })
-    } catch (err) {
-      console.error('Sniffer start failed:', err)
-    }
-  }, [])
 
-  const stopSniffer = useCallback(async () => {
-    try {
-      await netSecAIService.stopSniffer()
-      dispatch({ type: ACTIONS.SNIFFER_STATUS, payload: false })
-    } catch (err) {
-      console.error('Sniffer stop failed:', err)
-    }
-  }, [])
-
-  const refreshSniffer = useCallback(async () => {
-    try {
-      const [packetsResp, alertsResp] = await Promise.all([
-        netSecAIService.getSnifferPackets(200),
-        netSecAIService.getSnifferAlerts(),
-      ])
-      dispatch({
-        type: ACTIONS.SNIFFER_UPDATE,
-        payload: {
-          packets: packetsResp.packets || [],
-          alerts: alertsResp.alerts || [],
-          protocolStats: packetsResp.protocol_stats || {},
-          totalCaptured: packetsResp.total_captured || 0,
-        }
-      })
-    } catch (err) {
-      console.error('Sniffer refresh failed:', err)
-    }
-  }, [])
 
   return (
     <NetSecContext.Provider value={{
@@ -168,7 +118,7 @@ export function NetSecProvider({ children }) {
       checkThreat, resetThreatIntel,
       analyzeContent, resetContentAnalysis,
       runFullAnalysis, resetFullAnalysis,
-      startSniffer, stopSniffer, refreshSniffer,
+
     }}>
       {children}
     </NetSecContext.Provider>

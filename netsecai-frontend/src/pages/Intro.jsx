@@ -48,17 +48,7 @@ const SERVICES = [
     stats: { checks: "7 types", forms: "detected", scripts: "traced" },
     category: "Web Security",
   },
-  {
-    icon: Activity,
-    title: "Packet Sniffer",
-    description: "Real-time packet capture with live anomaly alerts and Wireshark-style protocol filtering.",
-    features: ["Live Capture", "Protocol Filter", "Real-time Alerts", "IP Lookup"],
-    path: "/packet-sniffer",
-    color: "orange",
-    gradient: "from-orange-600 via-orange-500 to-yellow-500",
-    stats: { refresh: "2s", alerts: "live", packets: "500 max" },
-    category: "Monitoring",
-  },
+
   {
     icon: Cpu,
     title: "Full Analysis",
@@ -283,7 +273,7 @@ export default function Intro() {
           {/* Hero stats */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-20">
             {[
-              { value: "6", label: "Security Modules", icon: Shield },
+              { value: "5", label: "Security Modules", icon: Shield },
               { value: "2", label: "Threat Intel APIs", icon: Wifi },
               { value: "AI", label: "Gemini Powered", icon: Cpu },
             ].map((s, i) => (
@@ -322,7 +312,7 @@ export default function Intro() {
             {[
               { icon: Zap, title: "AI-Powered Analysis", description: "Gemini explains every finding — risks, attack scenarios, and remediation steps in plain English that anyone can understand.", gradient: "from-yellow-500 to-orange-500", delay: 0 },
               { icon: Lock, title: "Real Backend APIs", description: "Every result comes from live DNS, port scanning, VirusTotal, AbuseIPDB, and Scapy — zero placeholders.", gradient: "from-green-500 to-emerald-500", delay: 150 },
-              { icon: Target, title: "6 Specialized Modules", description: "URL, PCAP, Threat Intel, Content, Live Sniffer, and Full Analysis — each purpose-built for specific threat vectors.", gradient: "from-purple-500 to-pink-500", delay: 300 },
+              { icon: Target, title: "5 Specialized Modules", description: "URL, PCAP, Threat Intel, Content, and Full Analysis — each purpose-built for specific threat vectors.", gradient: "from-purple-500 to-pink-500", delay: 300 },
             ].map((f, i) => (
               <div
                 key={i}
@@ -357,7 +347,7 @@ export default function Intro() {
               Our <span className="gradient-text">Services</span>
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Six specialized modules — all wired to real backends, all powered by Gemini AI.
+              Five specialized modules — all wired to real backends, all powered by Gemini AI.
             </p>
           </div>
 

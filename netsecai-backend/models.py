@@ -139,36 +139,6 @@ class ContentAnalyzeResponse(BaseModel):
     ai_explanation: Optional[str] = None
 
 
-# ── Sniffer ───────────────────────────────────────────────────────────────
-
-class LivePacket(BaseModel):
-    index: int
-    timestamp: float
-    src_ip: Optional[str]
-    dst_ip: Optional[str]
-    src_port: Optional[int]
-    dst_port: Optional[int]
-    protocol: str
-    length: int
-    info: Optional[str] = None
-
-
-class SnifferStatus(BaseModel):
-    running: bool
-    interface: Optional[str]
-    packet_count: int
-    start_time: Optional[float] = None
-
-
-class SnifferPacketsResponse(BaseModel):
-    packets: list[LivePacket]
-    total_captured: int
-    protocol_stats: dict[str, int]
-
-
-class SnifferAlertsResponse(BaseModel):
-    alerts: list[AnomalyAlert]
-    total_alerts: int
 
 
 # ── Full Analysis ─────────────────────────────────────────────────────────
