@@ -13,6 +13,10 @@ A comprehensive cybersecurity analysis suite leveraging real-time backend intell
 [**Environment Variables**](#environment-variables) •
 [**Security Notice**](#security-notice)
 ### Project is Live:- [NetSecAI](https://netsecai-kva.netlify.app)
+![Python](https://img.shields.io/badge/Python-3.12+-blue?logo=python&logoColor=white)
+![React](https://img.shields.io/badge/React-18-blue?logo=react)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC?logo=tailwind-css)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 </div>
 
 ---
