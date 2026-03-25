@@ -5,6 +5,7 @@
 
 A comprehensive cybersecurity analysis suite leveraging real-time backend intelligence and **Google Gemini AI** to detect, analyze, and explain network and web threats in plain language.
 
+[**Purpose**](#purpose-of-this-project) •
 [**Features**](#features) •
 [**Tech Stack**](#tech-stack) •
 [**Project Structure**](#project-structure) •
@@ -18,6 +19,13 @@ A comprehensive cybersecurity analysis suite leveraging real-time backend intell
 
 ## 🚀 What is NetSecAI?
 NetSecAI is a production-ready, full-stack cybersecurity analysis platform. It provides 5 specialized security tools that query live data (DNS, packets, VirusTotal, AbuseIPDB) and uses **Google's Gemini 2.5 Flash** to translate complex security findings into executive, non-technical summaries.
+
+---
+
+## <a id="purpose-of-this-project"></a>🎯 Purpose of this project
+This project was built to learn how real-world cybersecurity tools work behind the scenes. It serves as a hands-on experiment to understand how to scan for vulnerabilities, inspect network packets, and check IPs against threat databases.
+
+By adding Google Gemini AI, the goal is also to see how AI can help explain scary-looking terminal output and raw security data in simple, beginner-friendly English. Ultimately, this is a personal learning project designed to explore full-stack development and network security.
 
 ---
 
@@ -159,7 +167,13 @@ NetSecAI is built for **educational purposes, forensic analysis, and authorized 
 
 ---
 
-<div align="center">
-  <p>Built with ❤️ by Kushal V Achar &mdash; AI-Assisted Cybersecurity Engineering</p>
-  <a href="#top">⬆ Back to Top</a>
+## Author
+<div align="center" style="font-size:28px; font-weight:700; padding:8px 16px; border-radius:10px; background:#1f2937; color:#ffffff;">
+  Kushal V Achar
 </div>
+
+
+
+- GitHub: [@kushalvachar2006](https://github.com/kushalvachar2006)
+- LinkedIn: [Connect with me](https://www.linkedin.com/in/kushal-v-achar-796049317/)
+
